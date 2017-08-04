@@ -61,7 +61,7 @@ class AgreementHash implements AgreementHashinterface{
 
 
     function getNode($ip) {
-         $hashIp = $this->hashIp($ip);
+        $hashIp = $this->hashIp($ip);
 
         if(!$this->needSort) {
             $this->sortItem();
@@ -108,7 +108,6 @@ class AgreementHash implements AgreementHashinterface{
 
     function hashIp($str = "") {
 
-
         $hash = 0;
         $s = md5($str); //相比其它版本，进行了md5加密
         $seed = 5;
@@ -121,11 +120,11 @@ class AgreementHash implements AgreementHashinterface{
         }
         return $hash & 0x7FFFFFFF;
 
-}}
+    }
+}
 
 $hash = new AgreementHash();
 $hash->addItem("127.0.0.136");
-
 
 
 for($i = 0; $i < 5; $i++) {
